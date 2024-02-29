@@ -148,7 +148,7 @@ class ProjectAgent:
             self.optimizer.step() 
     
     def greedy_action(self, network, state):
-        device = torch.device("mps")
+        device = self.device
         with torch.no_grad():
             Q = network(torch.Tensor(state).unsqueeze(0).to(device))
             return torch.argmax(Q).item()
