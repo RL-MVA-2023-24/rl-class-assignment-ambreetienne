@@ -18,7 +18,7 @@ env_random = TimeLimit(
     env=HIVPatient(domain_randomization=True), max_episode_steps=200
 ) 
 
-device = torch.device("mps")
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 # You have to implement your own agent.
 # Don't modify the methods names and signatures, but you can add methods.
