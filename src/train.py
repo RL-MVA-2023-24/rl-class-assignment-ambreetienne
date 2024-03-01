@@ -34,6 +34,8 @@ DQN = torch.nn.Sequential(nn.Linear(state_dim, nb_neurons),
                           nn.ReLU(), 
                           nn.Linear(nb_neurons, nb_neurons), 
                           nn.ReLU(),
+                          nn.Linear(nb_neurons, nb_neurons), 
+                          nn.ReLU(),
                           nn.Linear(nb_neurons, n_action)).to(device)
 
 
